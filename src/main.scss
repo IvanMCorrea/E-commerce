@@ -1,0 +1,25 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.background{
+    background-color:black;
+    width: 100%;
+    height: 100%;
+}
+.yellow{
+    color: yellow;
+}
+.navBar{
+    color: white;
+    background-color: #303030;
+    padding-top: 1rem;
+}
+.navBar__list{
+    display: flex;
+    justify-content: space-around;
+}
+.navBar__list--img{
+    width: 28px;
+    height: auto;
+}
