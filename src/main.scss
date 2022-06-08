@@ -14,12 +14,17 @@
     color: white;
     background-color: #303030;
     padding-top: 1rem;
+    padding-bottom: 1rem;
 }
 .navBar__list{
     display: flex;
     justify-content: space-around;
 }
 .navBar__list--img{
+    width: 28px;
+    height: auto;
+}
+.navBar__list--carrito{
     width: 28px;
     height: auto;
 }
