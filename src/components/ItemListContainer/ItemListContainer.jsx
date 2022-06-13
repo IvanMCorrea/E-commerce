@@ -1,11 +1,15 @@
 import React from 'react'
+import ItemCount from './ItemCount/ItemCount'
 
 const ItemListContainer = (props) => {
     const styleText = {
         color: props.textColor,
     }
     return (
-        <h2 style={styleText}>{props.greetings}</h2>
+        <div className='itemList'>
+            <h2 style={styleText}>{props.greetings}</h2>
+            <ItemCount initial={1} stock={3} />
+        </div>
     )
 }
 
