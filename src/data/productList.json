@@ -3,35 +3,35 @@
     "name": "Hook",
     "category": "Adventure|Comedy|Fantasy",
     "price": 442,
-    "img": "undefined",
+    "img": "./img/Lumilagro.png",
     "desc": "In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.\n\nSuspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\n\nMaecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat."
 }, {
     "id": 2,
     "name": "D.C. Cab",
     "category": "Action|Comedy",
     "price": 226,
-    "img": "undefined",
+    "img": "./img/WaterdogObus.jpg",
     "desc": "Pellentesque at nulla. Suspendisse potenti. Cras in purus eu magna vulputate luctus.\n\nCum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
 }, {
     "id": 3,
     "name": "Brutal Relax",
     "category": "Action|Comedy",
     "price": 873,
-    "img": "undefined",
+    "img": "./img/WaterdogCopon.jpg",
     "desc": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero."
 }, {
     "id": 4,
     "name": "Diary of a Chambermaid (Journal d'une femme de chambre, Le)",
     "category": "Comedy|Drama",
     "price": 755,
-    "img": "undefined",
+    "img": "./img/StanleyStargazing.jpg",
     "desc": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat."
 }, {
     "id": 5,
     "name": "One Flew Over the Cuckoo's Nest",
     "category": "Drama",
     "price": 981,
-    "img": "undefined",
+    "img": "./img/StanleyNorthernHills.jpg",
     "desc": "Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla. Sed vel enim sit amet nunc viverra dapibus. Nulla suscipit ligula in lacus."
 }, {
     "id": 6,

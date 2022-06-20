@@ -1,15 +1,16 @@
 import React from 'react'
 
-const Item = ({item}) => {
+const ItemDetail = ({item}) => {
     return (
-        <div className='itemListContainer__itemList--item'>
-            <img src={item.img} alt="imagen" className='imgList'/>
+        <div>
+            <img src={item.img} alt="imagen" className='ItemDetail'/>
             <h2>{item.name}</h2>
             <h3>{item.category}</h3>
             <p>{item.desc}</p>
             <span>$ {item.price}</span>
+            <br /><br /><br />
         </div>
     )
 }
 
-export default Item
+export default ItemDetail

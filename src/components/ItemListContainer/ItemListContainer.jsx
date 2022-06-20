@@ -19,7 +19,7 @@ const ItemListContainer = (props) => {
         color: props.textColor,
     }
     return (
-        <div className='itemList'>
+        <div className='itemListContainer'>
             <ItemList items={productos}/>
             <h2 style={styleText}>{props.greetings}</h2>
             <ItemCount initial={1} stock={3} />

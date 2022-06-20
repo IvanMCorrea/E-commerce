@@ -28,8 +28,24 @@
     width: 28px;
     height: auto;
 }
-.itemList{
+.itemListContainer{
     display: flex;
     flex-direction: column;
     text-align: center;
+    height: auto;
+}
+.itemListContainer__itemList{
+
+}
+.itemListContainer__itemList--item{
+}
+.imgList{
+    width: 300px;
+    height: auto;
+    background-color: white;
+}
+.imgDetail{
+    width: 1000px;
+    height: auto;
+    background-color: white;
 }
