@@ -32,7 +32,7 @@
     text-align: center;
 }
 .itemListContainer__itemList{
-    margin: 2.5rem;
+    padding: 2.5rem;
 }
 .itemListContainer__itemList--item{
 }
@@ -47,4 +47,11 @@
     width: 1000px;
     height: auto;
     background-color: white;
+}
+.btn{
+    background-color: #303030;
+    color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
 }
