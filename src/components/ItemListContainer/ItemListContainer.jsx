@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import listaProductos from '../../data/productList.json';
 
@@ -19,10 +18,9 @@ const ItemListContainer = (props) => {
         color: props.textColor,
     }
     return (
-        <div className='itemListContainer'>
-            <ItemList items={productos}/>
+        <div className='itemListContainer w-full'>
             <h2 style={styleText}>{props.greetings}</h2>
-            <ItemCount initial={1} stock={3} />
+            <ItemList items={productos}/>
         </div>
     )
 }
