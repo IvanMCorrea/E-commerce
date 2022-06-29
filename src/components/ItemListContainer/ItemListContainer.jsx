@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import ItemList from '../ItemList/ItemList';
+import ItemList from '../itemList/ItemList';
 import listaProductos from '../../data/productList.json';
 import { useParams } from 'react-router-dom';
 

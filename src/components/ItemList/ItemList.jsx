@@ -1,5 +1,5 @@
 import React from 'react';
-import Item from '../Item/Item';
+import Item from '../item/Item';
 const ItemList = ({items}) => {
     return (
         <div className='itemListContainer__itemList grid grid-cols-3'>
