@@ -14,7 +14,6 @@ const App = () => {
       <CartProvider>
         <BrowserRouter>
           <NavBar/>
-          <h1 className="yellow">Hola Mundo</h1>
           <Routes>
             {/* Home */}
             <Route path="/" element={<ItemListContainer greetings="Lista de Productos" textColor="white"/>}/>

@@ -15,12 +15,31 @@ export const CartProvider = ({ children }) =>{
             setCart([...cart, {...item, cant}]);
         }
     }
-    
     //Limpiar carrito
     const clearCart = () =>{
-        cart = [];
+        setCart([]);
     }
-    return <cartContext.Provider value={{cart, addToCart, isInCartContext}}>
+    //Total carrito
+    const totalItemsInCart = () =>{
+        let total = 0;
+        cart.forEach((item)=> total = total + item.cant)
+        return total;
+    }
+    //Valor Total carrito
+    const totalValueInCart = () =>{
+        let total = 0;
+        cart.forEach((item)=> {
+            let precio = item.cant * item.price;
+            total = total + precio;
+        })
+        return total
+    }
+    //Borrar item
+    const eraseItemFromCart = (id) =>{
+        let newCart = cart.filter((item)=> item.id !== id)
+        setCart(newCart)
+    }
+    return <cartContext.Provider value={{cart, addToCart, isInCartContext, clearCart, totalValueInCart, totalItemsInCart, eraseItemFromCart }}>
         {children}
     </cartContext.Provider>
 }
