@@ -100,6 +100,20 @@
         width: 800px;
     }
 }
+.cartWidget--count{
+    transform: translate( 5%,-35%);
+    float: right;
+    background-color: darkcyan;
+    color: whitesmoke;
+    border-radius: 1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    border-radius: 1rem;
+    text-align: center;
+    font-weight: bolder;
+    padding-bottom: 1.8rem;
+    font-size: smaller;
+}
 .cart{
     margin: 2rem;
     display: flex;

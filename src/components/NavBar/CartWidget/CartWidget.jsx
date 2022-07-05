@@ -4,11 +4,10 @@ import { cartContext } from '../../../context/CartContext';
 
 const CartWidget = () => {
     const { cart, totalItemsInCart } = useContext(cartContext);
-    /* const [showCart, setShowCart] = useState(false);
+    const [showCart, setShowCart] = useState(false);
     const toggleShowCart = () =>{
         if (showCart === false){
             setShowCart(true);
-            showCartItems();
         } else {
             setShowCart(false)
         }
@@ -26,15 +25,13 @@ const CartWidget = () => {
             ))
             }
         }
-    } */
+    }
     
     return (
         <div>
-            <button><img src={cartImg} alt="Carrito" className='navBar__list--carrito'/></button>
-            {(totalItemsInCart() > 0)
-                ? <span>{totalItemsInCart()}</span> 
-                : null
-            }
+            <button onClick={toggleShowCart}><img src={cartImg} alt="Carrito" className='navBar__list--carrito'/></button>
+            {(totalItemsInCart() > 0) ? <div><span className='cartWidget--count'>{totalItemsInCart()}</span></div> : null}
+            {(showCart === true) ?   showCartItems() : null }
         </div>
     )
 }
