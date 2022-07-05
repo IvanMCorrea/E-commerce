@@ -13,18 +13,20 @@ const ItemDetail = ({item}) => {
         setAdded(true);
     }
     return (
-        <div>
+        <div className='itemDetail'>
             <img src={item.img} alt="imagen" className='imgDetail'/>
-            <h2>{item.name}</h2>
-            <h3>{item.category}</h3>
-            <p>{item.desc}</p>
-            <span>$ {item.price}</span>
-            <br /><br /><br />
-            {
-                (isAdded === false)
-                ? <ItemCount onAdd={onAdd} initial={1} stock={3} />
-                : <Link to="/cart"><button>Ir al Carrito</button></Link>
-            }
+            <div className="itemDetail__description">
+                <h2>{item.name}</h2>
+                <h3>{item.category}</h3>
+                <p>{item.desc}</p>
+                <span>$ {item.price}</span>
+                {
+                    (isAdded === false)
+                    ? <ItemCount onAdd={onAdd} initial={1} stock={3} />
+                    : <Link to="/cart"><button className="btn">Ir al Carrito</button></Link>
+                }
+            </div>
+            
             
         </div>
     )

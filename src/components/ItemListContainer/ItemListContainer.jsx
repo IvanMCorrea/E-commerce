@@ -8,16 +8,14 @@ const ItemListContainer = (props) => {
     const [productos, setProductos] = useState([]);
     useEffect(() => {
         const importarProductos = new Promise((res) => {
-            setTimeout(()=>{
-                if(categoriaId === undefined){
-                    res(listaProductos);
-                } else{
-                    const buscarCategoria = listaProductos.filter( obj =>{
-                        return obj.category === categoriaId;
-                    })
-                    res(buscarCategoria);
-                }
-            }, 1000);
+            if(categoriaId === undefined){
+                res(listaProductos);
+            } else{
+                const buscarCategoria = listaProductos.filter( obj =>{
+                    return obj.category === categoriaId;
+                })
+                res(buscarCategoria);
+            }
         });
         importarProductos.then((res) =>{
             setProductos(res);
@@ -28,7 +26,13 @@ const ItemListContainer = (props) => {
     }
     return (
         <div className='itemListContainer w-full'>
-            <h2 style={styleText}>{props.greetings}</h2>
+            <h1 style={styleText} className="itemListContainer--title">
+                {
+                    (categoriaId === undefined)
+                    ? props.greetings
+                    : categoriaId
+                }
+            </h1>
             <ItemList items={productos}/>
         </div>
     )
