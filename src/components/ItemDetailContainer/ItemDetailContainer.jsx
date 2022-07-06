@@ -1,20 +1,20 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from '../itemDetail/ItemDetail';
-import {useParams} from "react-router-dom";
+import { useParams } from "react-router-dom";
 import { traerUnProducto } from "../../services/firestore";
 
 const ItemDetailContainer = () => {
-    const { itemId } = useParams();
+    const { id } = useParams();
     const [product, setProduct] = useState({});
     useEffect(() => {
-        traerUnProducto(itemId)
+        traerUnProducto(id)
             .then((res) => {
                 setProduct(res);
             })
             .catch((error) => {
                 console.error(error);      
             });
-    }, [itemId]);
+    }, [id]);
     return (
         <div className='itemDetail'>
             <ItemDetail item={product} />

@@ -6,9 +6,7 @@ import { cartContext } from '../../context/CartContext';
 const ItemDetail = ({item}) => {
     const { addToCart } = useContext(cartContext);
     const [ isAdded, setAdded] = useState(false);
-    const [ cant, setCant] = useState([]);
     const onAdd = (count)=>{
-        setCant(count);
         addToCart(item, count)
         setAdded(true);
     }
@@ -22,7 +20,7 @@ const ItemDetail = ({item}) => {
                 <span>$ {item.price}</span>
                 {
                     (isAdded === false)
-                    ? <ItemCount onAdd={onAdd} initial={1} stock={3} />
+                    ? <ItemCount onAdd={onAdd} initial={1} stock={item.stock} />
                     : <Link to="/cart"><button className="btn">Ir al Carrito</button></Link>
                 }
             </div>

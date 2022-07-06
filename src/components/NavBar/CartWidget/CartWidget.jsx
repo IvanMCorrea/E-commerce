@@ -15,7 +15,7 @@ const CartWidget = () => {
     const showCartItems = ()=>{
         if(showCart === true){
             return cart.map((item)=>(
-                        <div className='cartWidgetItemList'>
+                        <div className='cartWidgetItemList' key={item.id}>
                             <img src={item.img} alt="imagen" className='imgList'/>
                             <h2>{item.name}</h2>
                             <h3>{item.category}</h3>

@@ -1,4 +1,4 @@
-import React, {useContext, useState} from 'react';
+import React, {useContext} from 'react';
 import {Link} from "react-router-dom";
 import { cartContext } from '../../context/CartContext';
 
@@ -13,7 +13,7 @@ const Cart = () => {
         <div className='cart'>
             <h1 className='cart--title'>Cart</h1>
             {cart.map((item)=>(
-                <div className='cart__Items'>
+                <div className='cart__Items' key={item.id}>
                     <img src={item.img} alt="imagen" className='cart__Items--img'/>
                     <h2>{item.name}</h2>
                     <h3>{item.category}</h3>

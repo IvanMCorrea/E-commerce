@@ -144,7 +144,6 @@ export async function exportDataToFirestore(){
 export async function traerUnProducto(itemId) {
     const docref = doc(appFirestore, "productos", itemId);
     const docSnapshot = await getDoc(docref);
-    console.log(docSnapshot);
     return {
         id: docSnapshot.id,
         ...docSnapshot.data(),
