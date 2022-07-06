@@ -1,27 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import ItemDetail from '../itemDetail/ItemDetail';
-import listaProductos from '../../data/productList.json';
 import {useParams} from "react-router-dom";
+import { traerUnProducto } from "../../services/firestore";
 
 const ItemDetailContainer = () => {
-    const { id } = useParams();
-    const [producto, setProducto] = useState([]);
+    const { itemId } = useParams();
+    const [product, setProduct] = useState({});
     useEffect(() => {
-        const buscarItem = listaProductos.find( obj => {
-            return obj.id === parseInt(id);
-        })
-        const importarProducto = new Promise((res) => {
-            setTimeout(()=>{
-                res(buscarItem);
-            }, 1000);
-        });
-        importarProducto.then((res) =>{
-            setProducto(res);
-        });
-    }, [id]);
+        traerUnProducto(itemId)
+            .then((res) => {
+                setProduct(res);
+            })
+            .catch((error) => {
+                console.error(error);      
+            });
+    }, [itemId]);
     return (
         <div className='itemDetail'>
-            <ItemDetail item={producto}/>
+            <ItemDetail item={product} />
         </div>
     )
 }

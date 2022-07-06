@@ -1,26 +1,30 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from '../itemList/ItemList';
-import listaProductos from '../../data/productList.json';
 import { useParams } from 'react-router-dom';
+import { traerProductos, traerProductosDeCategoria } from '../../services/firestore';
 
 const ItemListContainer = (props) => {
     const { categoriaId } = useParams();
     const [productos, setProductos] = useState([]);
     useEffect(() => {
-        const importarProductos = new Promise((res) => {
-            if(categoriaId === undefined){
-                res(listaProductos);
-            } else{
-                const buscarCategoria = listaProductos.filter( obj =>{
-                    return obj.category === categoriaId;
+        if (categoriaId) {
+            traerProductosDeCategoria(categoriaId)
+                .then((res) => {
+                    setProductos(res);
                 })
-                res(buscarCategoria);
+                .catch((error) => {
+                    console.log(error);
+                });
+        } else {
+            traerProductos()
+                .then((res) => {
+                    setProductos(res);
+                })
+                .catch((error) => {
+                    console.log(error);
+                });
             }
-        });
-        importarProductos.then((res) =>{
-            setProductos(res);
-        });
-    }, [categoriaId]);
+        }, [categoriaId]);
     const styleText = {
         color: props.textColor,
     }

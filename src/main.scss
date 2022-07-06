@@ -17,6 +17,9 @@
     background-color: #303030;
     padding-top: 1rem;
     padding-bottom: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
 }
 .navBar__list{
     display: flex;
@@ -100,19 +103,23 @@
         width: 800px;
     }
 }
+.cartWidgetItemList{
+    position: absolute;
+    right: 0;
+}
 .cartWidget--count{
     transform: translate( 5%,-35%);
     float: right;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: darkcyan;
     color: whitesmoke;
-    border-radius: 1rem;
-    width: 1.5rem;
-    height: 1.5rem;
-    border-radius: 1rem;
-    text-align: center;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
     font-weight: bolder;
-    padding-bottom: 1.8rem;
-    font-size: smaller;
+    font-size: small;
 }
 .cart{
     margin: 2rem;
