@@ -3,6 +3,7 @@ import "./main.scss";
 import NavBar from "./components/navBar/NavBar";
 import ItemListContainer from "./components/itemListContainer/ItemListContainer";
 import ItemDetailContainer from "./components/itemDetailContainer/ItemDetailContainer";
+import Contact from "./components/contact/Contact"
 import Cart from "./components/cart/Cart";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { CartProvider } from "./context/CartContext";
@@ -24,6 +25,8 @@ const App = () => {
             <Route path="/detalle/:id" element={<ItemDetailContainer/>}/>
             {/* Categorías de Productos */}
             <Route path="/categoria/:categoriaId" element={<ItemListContainer greetings={Children.categoriaId} textColor="white"/>}/>
+            {/* Contacto */}
+            <Route path="/contacto" element={<Contact />}/>
             {/* Carrito */}
             <Route path="/cart" element={<Cart/>}/>
           </Routes>

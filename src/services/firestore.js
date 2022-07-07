@@ -34,6 +34,14 @@ export async function traerProductosDeCategoria(categoriaId) {
     });
     return respuesta;
 }
+export async function traerUnProducto(itemId) {
+    const docref = doc(appFirestore, "productos", itemId);
+    const docSnapshot = await getDoc(docref);
+    return {
+        id: docSnapshot.id,
+        ...docSnapshot.data(),
+    };
+}
 export async function exportDataToFirestore(){
     const productos = [{
         "name": "Termo Lumilagro 1lt",
@@ -141,14 +149,7 @@ export async function exportDataToFirestore(){
         .catch((error)=> console.log("error: ", error))
     })
 }
-export async function traerUnProducto(itemId) {
-    const docref = doc(appFirestore, "productos", itemId);
-    const docSnapshot = await getDoc(docref);
-    return {
-        id: docSnapshot.id,
-        ...docSnapshot.data(),
-    };
-}
+
 export async function createBuyOrder(dataOrder) {
     const orderColectionRef = collection(appFirestore, "orders");
     const dateTimestamp = Timestamp.now();

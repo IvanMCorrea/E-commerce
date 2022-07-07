@@ -2,7 +2,7 @@ import React from 'react';
 import Item from '../item/Item';
 const ItemList = ({items}) => {
     return (
-        <div className='itemListContainer__itemList grid grid-cols-3'>
+        <div className='itemListContainer__itemList'>
             {items.map((item)=>(
                 <Item key={item.id} item={item}/>
             ))

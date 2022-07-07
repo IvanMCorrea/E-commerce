@@ -1,9 +1,17 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 @import "mixins";
 @import "reset";
 
+button{
+    all: unset;
+}
+a{
+    text-decoration: none;
+    color: white;
+}
+li{
+    list-style: none;
+    color: white;
+}
 .background{
     background-color:darkcyan;
     width: 100%;
@@ -38,13 +46,21 @@
 }
 .itemListContainer{
     text-align: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
+    padding-top: 2rem; 
 }
 .itemListContainer--title{
     @include Title;
 }
 .itemListContainer__itemList{
     padding: 2.5rem;
+    display: grid;
+    @media (min-width: 600px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 900px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 .itemListContainer__itemList--item{
     background-color: whitesmoke;
@@ -70,7 +86,8 @@
 }
 .itemDetail{
     display: flex;
-    margin: 2rem;
+    margin: 3rem 2rem 2rem 2rem;
+    padding-top: 2rem; 
 }
 .itemDetail__description{
     display: flex;
