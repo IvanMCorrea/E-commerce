@@ -173,10 +173,63 @@ li{
         width: 250px;
     }
 }
+.compra__overlay{
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(36, 36, 36, 0.8);
+    width: 100vw;
+    height: 100%;
+    z-index: 2;
+    transform: translateX(+200%);
+    transition: 0.8s ease-in-out;
+}
+.compra__overlay.open{
+    transform: translateX(0%);
+}
+.compra__modal{
+    height: 100vh;
+    width: 100%;
+    background-color: rgb(50,50,50);
+    overflow: scroll;
+    overflow-x: hidden;
+    color: white;
+    @include BordesImg;
+    @media (min-width: 550px){
+        width: 40%;
+        height: 50vh;
+    }
+}
+.compra__modal--close{
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 1rem;
+    cursor: pointer;
+}
+.compra__modal--close--btn{
+    border: solid 1px;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+}
+.compra__modal--form{
+    display: flex;
+    flex-direction: column;
+    padding: 5% 15% 5% 15%;
+}
 .btn{
     background-color: #303030;
     color: white;
     margin: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 5px;
+}
+.btn-reverse{
+    background-color: darkcyan;
+    margin: 1rem;
     padding: 0.5rem;
     border-radius: 5px;
 }

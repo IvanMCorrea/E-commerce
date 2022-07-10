@@ -7,18 +7,17 @@ import { assetsUrl } from "../../context/ImgContext";
 const ItemDetail = ({item}) => {
     const { addToCart } = useContext(cartContext);
     const [ isAdded, setAdded] = useState(false);
-    const [ url, setUrl] = useState();
     const onAdd = (count)=>{
         addToCart(item, count)
         setAdded(true);
     }
+    const [ url, setUrl] = useState();
     useEffect(() => {
         if ((item.img) === undefined){
-            console.log(assetsUrl)
         } else return () => {
             setUrl(assetsUrl(`./${item.img}`))
         }
-    }, [assetsUrl])
+    }, [item])
     return (
         <div className='itemDetail'>
             <div className="itemDetail__description">
