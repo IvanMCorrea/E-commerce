@@ -11,13 +11,10 @@ const ItemDetail = ({ item }) => {
     addToCart(item, count);
     setAdded(true);
   };
-  const [url, setUrl] = useState();
+  const [url, setUrl] = useState("");
   useEffect(() => {
     if (item.img === undefined) {
-    } else
-      return () => {
-        setUrl(assetsUrl(`./${item.img}`));
-      };
+    } else setUrl(assetsUrl(`./${item.img}`));
   }, [item]);
   return (
     <div className="itemDetail">
