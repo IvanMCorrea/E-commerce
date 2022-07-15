@@ -25,7 +25,6 @@
     "extends": [
       "react-app",
       "react-app/jest",
-      "some-other-config-you-use",
       "prettier"
     ]
   },
