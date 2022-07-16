@@ -6,7 +6,11 @@ const Item = ({ item }) => {
   const urlItem = `/detalle/${item.id}`;
   return (
     <div className="itemListContainer__itemList--item">
-      <img src={assetsUrl(`./${item.img}`)} alt="imagen" className="imgList" />
+      <img
+        src={assetsUrl(`./${item.img}`)}
+        alt={item.name}
+        className="imgList"
+      />
       <h2>{item.name}</h2>
       <h3>{item.category}</h3>
       <span>$ {item.price}</span>

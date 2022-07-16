@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { cartContext } from "../../context/CartContext";
 import CartForm from "./cartForm/CartForm";
+import { assetsUrl } from "../../context/ImgContext";
 
 const Cart = () => {
   const { cart, eraseItemFromCart } = useContext(cartContext);
@@ -25,7 +26,11 @@ const Cart = () => {
       <h1 className="cart--title">Cart</h1>
       {cart.map((item) => (
         <div className="cart__Items" key={item.id}>
-          <img src={item.img} alt="imagen" className="cart__Items--img" />
+          <img
+            src={assetsUrl(`./${item.img}`)}
+            alt="imagen"
+            className="cart__Items--img"
+          />
           <h2>{item.name}</h2>
           <h3>{item.category}</h3>
           <span>$ {item.price}</span>

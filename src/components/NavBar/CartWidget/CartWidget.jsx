@@ -3,9 +3,9 @@ import Dropdown from "./dropdown/Dropdown";
 
 const CartWidget = () => {
   return (
-    <div>
+    <>
       <Dropdown />
-    </div>
+    </>
   );
 };
 

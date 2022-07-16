@@ -6,7 +6,6 @@ import { assetsUrl } from "../../../../context/ImgContext";
 function App() {
   const [isShown, setIsShown] = useState(false);
   const { cart, totalItemsInCart } = useContext(cartContext);
-
   return (
     <div>
       <button onClick={() => (isShown ? setIsShown(false) : setIsShown(true))}>
@@ -16,16 +15,15 @@ function App() {
         <span className="cartWidget--count">{totalItemsInCart()}</span>
       ) : null}
       {isShown && (
-        <div>
+        <div className="cartWidgetItemList">
           {cart.map((item) => (
-            <div className="cartWidgetItemList" key={item.id}>
+            <div className="cartWidgetItemList--item" key={item.id}>
               <img
                 src={assetsUrl(`./${item.img}`)}
                 alt="imagen"
-                className="imgList"
+                className="cartWidgetItemList--img"
               />
               <h2>{item.name}</h2>
-              <h3>{item.category}</h3>
               <span>$ {item.price}</span>
               <br />
               <span>Cantidad: {item.cant}</span>

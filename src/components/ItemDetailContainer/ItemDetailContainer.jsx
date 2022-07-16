@@ -16,9 +16,9 @@ const ItemDetailContainer = () => {
       });
   }, [id]);
   return (
-    <div className="itemDetail">
+    <>
       <ItemDetail item={product} />
-    </div>
+    </>
   );
 };
 

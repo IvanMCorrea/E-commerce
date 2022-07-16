@@ -8,20 +8,21 @@ const ItemDetail = ({ item }) => {
   const { addToCart } = useContext(cartContext);
   const [isAdded, setAdded] = useState(false);
   const onAdd = (count) => {
-    addToCart(item, count);
-    setAdded(true);
+    if (item.id !== undefined) {
+      addToCart(item, count);
+      setAdded(true);
+    }
   };
   const [url, setUrl] = useState("");
   useEffect(() => {
-    if (item.img === undefined) {
-    } else setUrl(assetsUrl(`./${item.img}`));
+    if (item.img !== undefined) {
+      setUrl(assetsUrl(`./${item.img}`));
+    }
   }, [item]);
   return (
     <div className="itemDetail">
+      <img src={url} alt={item.name} className="imgDetail" />
       <div className="itemDetail__description">
-        <div>
-          <img src={url} alt="imagen" className="imgDetail" />
-        </div>
         <h2>{item.name}</h2>
         <h3>{item.category}</h3>
         <p>{item.desc}</p>
