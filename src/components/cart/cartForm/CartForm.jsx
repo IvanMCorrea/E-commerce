@@ -1,8 +1,11 @@
 import React, { useState, useContext } from "react";
 import { cartContext } from "../../../context/CartContext";
 import { createBuyOrder } from "../../../services/firestore";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
 const CartForm = (props) => {
+  const MySwal = withReactContent(Swal);
   const { cart, clearCart, totalValueInCart } = useContext(cartContext);
   const [buyer, setBuyer] = useState({
     user: "",
@@ -27,7 +30,14 @@ const CartForm = (props) => {
     createBuyOrder(dataOrder).then((orderDataCreated) => {
       clearCart();
       props.handleModal();
-      console.log(orderDataCreated.id);
+      MySwal.fire({
+        icon: "success",
+        title: "Pedido realizado!",
+        text: "Su compra fue exitosa",
+        confirmButtonText: "Volver al Inicio",
+      }).then(() => {
+        return (window.location.href = `/`);
+      });
     });
   }
   return (

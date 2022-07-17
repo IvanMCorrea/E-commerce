@@ -20,7 +20,7 @@ function App() {
             <div className="cartWidgetItemList--item" key={item.id}>
               <img
                 src={assetsUrl(`./${item.img}`)}
-                alt="imagen"
+                alt={item.name}
                 className="cartWidgetItemList--img"
               />
               <h2>{item.name}</h2>
