@@ -1,5 +1,6 @@
 @import "mixins";
 @import "reset";
+@import url("https://fonts.googleapis.com/css2?family=Boogaloo&display=swap");
 
 button {
   all: unset;
@@ -40,9 +41,19 @@ li {
 .navBar__logo {
   display: flex;
 }
+.navBar__logo--title {
+  font-size: x-large;
+  font-family: "Boogaloo", cursive;
+}
 .navBar__list--img {
   width: 28px;
   height: auto;
+}
+.navBar__list--category {
+  display: none;
+  @media (min-width: 768px) {
+    display: inline;
+  }
 }
 .navBar__list--carrito {
   width: 28px;
@@ -50,8 +61,7 @@ li {
 }
 .itemListContainer {
   text-align: center;
-  margin-top: 4rem;
-  padding-top: 2rem;
+  padding-top: 6rem;
 }
 .itemListContainer--title {
   @include Title;
@@ -152,6 +162,9 @@ li {
 }
 .cartWidgetItemList--item {
   padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .cartWidget--count {
   transform: translate(5%, -35%);
@@ -166,6 +179,12 @@ li {
   height: 1rem;
   font-weight: bolder;
   font-size: small;
+}
+.cartWidgetItemList--item--title {
+  padding-bottom: 1rem;
+}
+.cartWidgetItemList--item--price {
+  padding-top: 1rem;
 }
 .cartWidgetItemList--img {
   width: 100px;
@@ -277,6 +296,16 @@ li {
   flex-direction: column;
   padding: 5% 15% 5% 15%;
 }
+.contact__modal--form {
+  display: flex;
+  flex-direction: column;
+  padding: 30% 15% 15% 15%;
+  text-align: center;
+}
+.contact__modal--form--title {
+  color: white;
+  padding-bottom: 2rem;
+}
 .btn {
   background-color: #303030;
   color: white;
@@ -289,4 +318,8 @@ li {
   margin: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
+}
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
 }

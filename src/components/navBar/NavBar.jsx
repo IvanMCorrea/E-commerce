@@ -14,20 +14,28 @@ const NavBar = () => {
               alt="logo"
               className="navBar__list--img"
             />
-            <h1> MATESITO</h1>
+            <h1 className="navBar__logo--title"> MATESITO</h1>
           </div>
         </Link>
         <li>
-          <Link to="/">Productos</Link>
+          <Link to="/" className="navBar__list--category">
+            Productos
+          </Link>
         </li>
         <li>
-          <Link to="/categoria/Termos">Termos</Link>
+          <Link to="/categoria/Termos" className="navBar__list--category">
+            Termos
+          </Link>
         </li>
         <li>
-          <Link to="/categoria/Mates">Mates</Link>
+          <Link to="/categoria/Mates" className="navBar__list--category">
+            Mates
+          </Link>
         </li>
         <li>
-          <Link to="/categoria/Bombillas">Bombillas</Link>
+          <Link to="/categoria/Bombillas" className="navBar__list--category">
+            Bombillas
+          </Link>
         </li>
         <li>
           <Link to="/contacto">Contact</Link>

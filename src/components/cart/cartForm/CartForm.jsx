@@ -20,6 +20,11 @@ const CartForm = (props) => {
       [field]: value,
     });
   };
+  const validateForm = () => {
+    if ((buyer.user === "") | (buyer.phone === "") | (buyer.email === "")) {
+      return true;
+    }
+  };
   function handleBuyOrder(evt) {
     evt.preventDefault();
     const dataOrder = {
@@ -36,7 +41,7 @@ const CartForm = (props) => {
         text: "Su compra fue exitosa",
         confirmButtonText: "Volver al Inicio",
       }).then(() => {
-        return (window.location.href = `/`);
+        return (window.location.href = "/");
       });
     });
   }
@@ -51,7 +56,11 @@ const CartForm = (props) => {
       <label htmlFor="phone">Telefono</label>
       <input type="number" name="phone" onChange={handleChange} required />
 
-      <button className="btn-reverse" onClick={handleBuyOrder}>
+      <button
+        className="btn-reverse"
+        onClick={handleBuyOrder}
+        disabled={validateForm()}
+      >
         Finalizar Compra
       </button>
     </form>
