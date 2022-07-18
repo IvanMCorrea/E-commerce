@@ -63,6 +63,14 @@ li {
   text-align: center;
   padding-top: 6rem;
 }
+.itemListContainer__error {
+  text-align: center;
+  padding-top: 10rem;
+  color: white;
+}
+.itemListContainer__error--msj {
+  padding-bottom: 1rem;
+}
 .itemListContainer--title {
   @include Title;
 }
@@ -312,12 +320,18 @@ li {
   margin: 0.5rem;
   padding: 0.5rem;
   border-radius: 5px;
+  &:hover {
+    background-color: #555555;
+  }
 }
 .btn-reverse {
   background-color: darkcyan;
   margin: 1rem;
   padding: 0.5rem;
   border-radius: 5px;
+  &:hover {
+    background-color: #00c9bf;
+  }
 }
 button:disabled {
   background-color: gray;
