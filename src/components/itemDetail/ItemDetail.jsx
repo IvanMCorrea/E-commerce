@@ -23,10 +23,12 @@ const ItemDetail = ({ item }) => {
     <div className="itemDetail">
       <img src={url} alt={item.name} className="imgDetail" />
       <div className="itemDetail__description">
-        <h2>{item.name}</h2>
-        <h3>{item.category}</h3>
-        <p>{item.desc}</p>
-        <span>$ {item.price}</span>
+        <h2 className="itemDetail__description--title">{item.name}</h2>
+        <h3 className="itemDetail__description--category">
+          Categoría: {item.category}
+        </h3>
+        <p className="itemDetail__description--desc">{item.desc}</p>
+        <span className="itemDetail__description--price">$ {item.price}</span>
         {isAdded === false ? (
           <ItemCount onAdd={onAdd} initial={1} stock={item.stock} />
         ) : (
@@ -35,7 +37,7 @@ const ItemDetail = ({ item }) => {
               <button className="btn">Ir al Carrito</button>
             </Link>
             <Link to="/productos">
-              <button className="btn">Seguir Comprando</button>
+              <button className="btn-reverse">Seguir Comprando</button>
             </Link>
           </div>
         )}

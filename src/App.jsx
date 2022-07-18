@@ -20,34 +20,19 @@ const App = () => {
             {/* Home */}
             <Route
               path="/"
-              element={
-                <ItemListContainer
-                  greetings="Lista de Productos"
-                  textColor="white"
-                />
-              }
+              element={<ItemListContainer greetings="Lista de Productos" />}
             />
             {/* Lista de Productos */}
             <Route
               path="/productos"
-              element={
-                <ItemListContainer
-                  greetings="Lista de Productos"
-                  textColor="white"
-                />
-              }
+              element={<ItemListContainer greetings="Lista de Productos" />}
             />
             {/* Detalle de Productos */}
             <Route path="/detalle/:id" element={<ItemDetailContainer />} />
             {/* Categorías de Productos */}
             <Route
               path="/categoria/:categoriaId"
-              element={
-                <ItemListContainer
-                  greetings={Children.categoriaId}
-                  textColor="white"
-                />
-              }
+              element={<ItemListContainer greetings={Children.categoriaId} />}
             />
             {/* Contacto */}
             <Route path="/contacto" element={<Contact />} />

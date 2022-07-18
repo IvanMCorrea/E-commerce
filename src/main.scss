@@ -2,26 +2,59 @@
 @import "reset";
 @import url("https://fonts.googleapis.com/css2?family=Boogaloo&display=swap");
 
-button {
-  all: unset;
-  cursor: pointer;
-}
 a {
   text-decoration: none;
   color: white;
+}
+input {
+  height: 2rem;
+  padding: 0 1rem 0 1rem;
+  @include BordesImg;
+}
+textarea {
+  padding: 0.5rem 1rem 0 1rem;
+  @include BordesImg;
 }
 li {
   list-style: none;
   color: white;
 }
 .background {
-  background-color: darkcyan;
-  width: 100%;
+  background-color: #fbfbfd;
   min-height: 100vh;
 }
-.yellow {
-  color: yellow;
+//---------------------------- BUTTONS ----------------------------
+button {
+  all: unset;
+  cursor: pointer;
 }
+.btn {
+  background: linear-gradient(90deg, #14503c 0%, #237a57 100%);
+  color: white;
+  font-weight: bold;
+  margin: 1.5rem;
+  padding: 0.8rem;
+  border-radius: 5px;
+  &:hover {
+    background: linear-gradient(90deg, #237a57 0%, #209969 100%);
+  }
+}
+.btn-reverse {
+  background-color: #303030;
+  color: white;
+  font-weight: bold;
+  margin: 1.5rem;
+  padding: 0.8rem;
+  border-radius: 5px;
+  &:hover {
+    background-color: #777777;
+  }
+}
+button:disabled {
+  background-color: gray;
+  cursor: not-allowed;
+}
+//---------------------------- NAV BAR ----------------------------
 .navBar {
   color: white;
   background-color: #303030;
@@ -59,6 +92,7 @@ li {
   width: 28px;
   height: auto;
 }
+//---------------------------- ITEM LIST ----------------------------
 .itemListContainer {
   text-align: center;
   padding-top: 6rem;
@@ -87,6 +121,9 @@ li {
 .itemListContainer__itemList--item {
   background-color: whitesmoke;
   margin: 1.5rem;
+  -webkit-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.3);
   @include BordesImg;
 }
 .imgList {
@@ -106,14 +143,17 @@ li {
     width: 450px;
   }
 }
+//---------------------------- ITEM DETAIL ----------------------------
 .itemDetail {
-  padding: 5rem 2rem 2rem 2rem;
+  padding: 6rem 1rem 2rem 1rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   @media (min-width: 768px) {
     display: flex;
     flex-direction: row;
+    padding: 6rem 2rem 2rem 2rem;
+    justify-content: center;
   }
 }
 .itemDetail__description {
@@ -132,10 +172,32 @@ li {
     margin: 8rem;
   }
 }
+.itemDetail__description--title {
+  padding-bottom: 1rem;
+  font-size: xx-large;
+}
+.itemDetail__description--category {
+  padding-bottom: 1rem;
+}
+.itemDetail__description--desc {
+  padding-bottom: 1rem;
+}
+.itemDetail__description--price {
+  padding-bottom: 1rem;
+  font-size: x-large;
+  font-weight: bold;
+}
+.itemDetail__description__count {
+  font-size: large;
+  font-weight: 500;
+}
 .imgDetail {
   width: 200px;
   height: auto;
   background-color: white;
+  -webkit-box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 2px 10px 5px rgba(0, 0, 0, 0.3);
   @include BordesImg;
   @media (min-width: 768px) {
     width: 300px;
@@ -146,22 +208,20 @@ li {
   @media (min-width: 1536px) {
     width: 600px;
   }
-  @media (min-width: 1750px) {
-    width: 800px;
-  }
 }
+//---------------------------- CART WIDGET ----------------------------
 .cartWidgetItemList {
   position: absolute;
   float: right;
   width: 100%;
   height: 95vh;
-  margin-top: 4rem;
+  margin-top: 1.1rem;
   top: 0;
   right: 0;
   overflow-y: scroll;
   background: #303030;
   padding: 3rem 2rem 2rem 2rem;
-  z-index: -1;
+  z-index: 3;
   text-align: center;
   border-radius: 0 0 0 15px;
   @media (min-width: 768px) {
@@ -209,20 +269,20 @@ li {
     width: 150px;
   }
 }
+.cartWidgetModal {
+  position: fixed;
+  width: 100vw;
+  height: 100%;
+  left: 0;
+  z-index: 2;
+  transition: 0.8s ease-in-out;
+}
+//---------------------------- CART ----------------------------
 .cart {
-  padding: 4rem;
+  padding: 8rem 1rem 2rem 1rem;
   display: flex;
   flex-direction: column;
   text-align: center;
-  @media (min-width: 768px) {
-    padding: 5rem;
-  }
-  @media (min-width: 1024px) {
-    padding: 6rem;
-  }
-  @media (min-width: 1536px) {
-    padding: 7rem;
-  }
 }
 .cart--title {
   @include Title;
@@ -230,13 +290,15 @@ li {
 }
 .cart__Items {
   display: flex;
-  justify-content: space-around;
   flex-direction: column;
   align-items: center;
   background-color: whitesmoke;
   margin: 1.5rem;
+  text-align: center;
   @include BordesImg;
-  @media (min-width: 768px) {
+  @media (min-width: 900px) {
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr 1fr 1fr 1fr 1fr;
     flex-direction: row;
   }
 }
@@ -257,6 +319,7 @@ li {
     width: 250px;
   }
 }
+//---------------------------- COMPRA ----------------------------
 .compra__overlay {
   display: flex;
   position: fixed;
@@ -284,7 +347,7 @@ li {
   @include BordesImg;
   @media (min-width: 550px) {
     width: 40%;
-    height: 50vh;
+    height: 60vh;
   }
 }
 .compra__modal--close {
@@ -302,7 +365,14 @@ li {
 .compra__modal--form {
   display: flex;
   flex-direction: column;
-  padding: 5% 15% 5% 15%;
+  padding: 0 15% 5% 15%;
+}
+.compra__modal--form--input {
+  margin-bottom: 1rem;
+}
+//---------------------------- CONTACT ----------------------------
+.form__input {
+  margin-bottom: 1.5rem;
 }
 .contact__modal--form {
   display: flex;
@@ -311,29 +381,5 @@ li {
   text-align: center;
 }
 .contact__modal--form--title {
-  color: white;
   padding-bottom: 2rem;
-}
-.btn {
-  background-color: #303030;
-  color: white;
-  margin: 0.5rem;
-  padding: 0.5rem;
-  border-radius: 5px;
-  &:hover {
-    background-color: #555555;
-  }
-}
-.btn-reverse {
-  background-color: darkcyan;
-  margin: 1rem;
-  padding: 0.5rem;
-  border-radius: 5px;
-  &:hover {
-    background-color: #00c9bf;
-  }
-}
-button:disabled {
-  background-color: gray;
-  cursor: not-allowed;
 }

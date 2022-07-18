@@ -18,7 +18,7 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         {" "}
         -{" "}
       </button>
-      <span> {count} </span>
+      <span className="itemDetail__description__count"> {count} </span>
       <button className="btn" onClick={agregar}>
         {" "}
         +{" "}

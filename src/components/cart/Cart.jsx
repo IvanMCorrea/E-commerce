@@ -51,7 +51,7 @@ const Cart = () => {
         </div>
       ) : (
         <div>
-          <h2>Total: {total}</h2>
+          <h2>Total: ${total}</h2>
           <br />
           <button className="btn" onClick={handleModal}>
             Terminar mi compra

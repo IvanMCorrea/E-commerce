@@ -10,6 +10,25 @@ The tool used is the React javascript library, in order to achieve greater versa
 - [![Tailwind][tailwind.com]][tailwind-url] (Uninstalled, replaced by own CSS)
 - [![Netlify][netlify.com]][netlify-url]
 
+## Roadmap
+
+- [x] Add ReadMe
+- [x] Create App
+- [x] Create Components
+- [x] Add Navigation with React Router Dom
+- [x] Create Context
+- [x] Handle Imgs Routes
+- [x] Validate forms and give feedback
+- [x] Add Styles
+- [x] Config Prettier and EsLint
+- [x] Use cloud database (Firebase)
+- [x] Deploy on Netlify
+- [ ] Deploy on GitHub Pages
+- [ ] Stock management
+- [ ] Multi-language Support
+  - [ ] English
+  - [ ] Spanish
+
 ## Deploy
 
 #### 1. Clone the repo

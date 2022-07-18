@@ -11,6 +11,7 @@ const CartForm = (props) => {
     user: "",
     phone: "",
     email: "",
+    emailConfirm: "",
   });
   const handleChange = (evt) => {
     const field = evt.target.name;
@@ -21,7 +22,12 @@ const CartForm = (props) => {
     });
   };
   const validateForm = () => {
-    if ((buyer.user === "") | (buyer.phone === "") | (buyer.email === "")) {
+    if (
+      (buyer.user === "") |
+      (buyer.phone === "") |
+      (buyer.email === "") |
+      (buyer.email !== buyer.emailConfirm)
+    ) {
       return true;
     }
   };
@@ -32,7 +38,7 @@ const CartForm = (props) => {
       items: cart,
       total: totalValueInCart(),
     };
-    createBuyOrder(dataOrder).then((orderDataCreated) => {
+    createBuyOrder(dataOrder).then(() => {
       clearCart();
       props.handleModal();
       MySwal.fire({
@@ -48,16 +54,43 @@ const CartForm = (props) => {
   return (
     <form action="" className="compra__modal--form">
       <label htmlFor="user">Nombre</label>
-      <input type="text" name="user" onChange={handleChange} required />
+      <input
+        type="text"
+        name="user"
+        className="compra__modal--form--input"
+        onChange={handleChange}
+        required
+      />
 
       <label htmlFor="email">E-mail</label>
-      <input type="email" name="email" onChange={handleChange} required />
+      <input
+        type="email"
+        name="email"
+        className="compra__modal--form--input"
+        onChange={handleChange}
+        required
+      />
+
+      <label htmlFor="emailConfirm">Confirmar E-mail</label>
+      <input
+        type="email"
+        name="emailConfirm"
+        className="compra__modal--form--input"
+        onChange={handleChange}
+        required
+      />
 
       <label htmlFor="phone">Telefono</label>
-      <input type="number" name="phone" onChange={handleChange} required />
+      <input
+        type="number"
+        name="phone"
+        className="compra__modal--form--input"
+        onChange={handleChange}
+        required
+      />
 
       <button
-        className="btn-reverse"
+        className="btn"
         onClick={handleBuyOrder}
         disabled={validateForm()}
       >

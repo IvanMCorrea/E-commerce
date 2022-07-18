@@ -39,7 +39,7 @@ const ItemListContainer = (props) => {
     if (productos.length > 0) {
       return (
         <div className="itemListContainer">
-          <h1 style={styleText} className="itemListContainer--title">
+          <h1 className="itemListContainer--title">
             {categoriaId === undefined ? props.greetings : categoriaId}
           </h1>
           <ItemList items={productos} />
@@ -57,9 +57,6 @@ const ItemListContainer = (props) => {
         </div>
       );
     }
-  };
-  const styleText = {
-    color: props.textColor,
   };
   return <>{renderizar === true ? renderizarCod() : null}</>;
 };
