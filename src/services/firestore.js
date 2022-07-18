@@ -12,12 +12,12 @@ import {
   Timestamp,
 } from "firebase/firestore";
 const firebaseConfig = {
-  apiKey: "AIzaSyCvnGi2789idTUXShhr-qkRgUtNzS8VrTo",
-  authDomain: "e-commerce-react-1d96b.firebaseapp.com",
-  projectId: "e-commerce-react-1d96b",
-  storageBucket: "e-commerce-react-1d96b.appspot.com",
-  messagingSenderId: "102392309098",
-  appId: "1:102392309098:web:69beb693a1f531eb2ef113",
+  apiKey: process.env.REACT_APP_API_KEY,
+  authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_MSJ_SENDER_ID,
+  appId: process.env.REACT_APP_APP_ID,
 };
 const appFirebase = initializeApp(firebaseConfig);
 const appFirestore = getFirestore(appFirebase);
