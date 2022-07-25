@@ -54,6 +54,11 @@ button:disabled {
   background-color: gray;
   cursor: not-allowed;
 }
+.loader {
+  display: flex;
+  justify-content: center;
+  padding-top: 25%;
+}
 //---------------------------- NAV BAR ----------------------------
 .navBar {
   color: white;

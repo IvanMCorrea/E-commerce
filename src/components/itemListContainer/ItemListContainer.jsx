@@ -5,6 +5,7 @@ import {
   traerProductos,
   traerProductosDeCategoria,
 } from "../../services/firestore";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const ItemListContainer = (props) => {
   const { categoriaId } = useParams();
@@ -58,7 +59,17 @@ const ItemListContainer = (props) => {
       );
     }
   };
-  return <>{renderizar === true ? renderizarCod() : null}</>;
+  return (
+    <>
+      {renderizar === true ? (
+        renderizarCod()
+      ) : (
+        <div className="loader">
+          <PacmanLoader color={"#dce014"} />
+        </div>
+      )}
+    </>
+  );
 };
 
 export default ItemListContainer;

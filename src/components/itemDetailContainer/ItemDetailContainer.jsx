@@ -3,6 +3,7 @@ import ItemDetail from "../itemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 import { traerUnProducto } from "../../services/firestore";
 import { Link } from "react-router-dom";
+import PacmanLoader from "react-spinners/PacmanLoader";
 
 const ItemDetailContainer = () => {
   const { id } = useParams();
@@ -36,7 +37,17 @@ const ItemDetailContainer = () => {
       return <ItemDetail item={product} />;
     }
   };
-  return <>{renderizar === true ? renderizarCod() : null}</>;
+  return (
+    <>
+      {renderizar === true ? (
+        renderizarCod()
+      ) : (
+        <div className="loader">
+          <PacmanLoader color={"#dce014"} />
+        </div>
+      )}
+    </>
+  );
 };
 
 export default ItemDetailContainer;

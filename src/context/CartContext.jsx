@@ -4,6 +4,7 @@ export const cartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
+  const [cartCant, setCartCant] = useState();
   //Verificar si esta en carrito
   const isInCartContext = (id) => {
     return cart.some((item) => item.id === id);
@@ -12,7 +13,14 @@ export const CartProvider = ({ children }) => {
   const addToCart = (item, cant) => {
     if (isInCartContext(item.id) === false) {
       setCart([...cart, { ...item, cant }]);
+    } else {
+      let array = cart;
+      let index = cart.findIndex((a) => a.id === item.id);
+      let suma = cant + cart[index].cant;
+      array[index].cant = suma;
+      setCart(array);
     }
+    setCartCant(totalItemsInCart());
   };
   //Limpiar carrito
   const clearCart = () => {
@@ -42,11 +50,12 @@ export const CartProvider = ({ children }) => {
     <cartContext.Provider
       value={{
         cart,
+        cartCant,
+        totalItemsInCart,
         addToCart,
         isInCartContext,
         clearCart,
         totalValueInCart,
-        totalItemsInCart,
         eraseItemFromCart,
       }}
     >
