@@ -33,6 +33,23 @@ export async function traerProductos() {
   });
   return respuesta;
 }
+export async function traerCategorias() {
+  let prods = [];
+  let category = [];
+  let categories = traerProductos()
+    .then((res) => {
+      prods = res;
+    })
+    .then(() => {
+      category = prods.map((item) => {
+        return (category = [item.category]);
+      });
+      const cat = new Set(category.map((obj) => obj[0]));
+      return cat;
+    });
+  return categories;
+}
+
 export async function traerProductosDeCategoria(categoriaId) {
   const prodsCollection = collection(appFirestore, "productos");
   const q = query(prodsCollection, where("category", "==", categoriaId));

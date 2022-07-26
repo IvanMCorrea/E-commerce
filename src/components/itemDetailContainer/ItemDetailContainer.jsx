@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import ItemDetail from "../itemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
-import { traerUnProducto } from "../../services/firestore";
+import { traerUnProducto, traerCategorias } from "../../services/firestore";
 import { Link } from "react-router-dom";
 import PacmanLoader from "react-spinners/PacmanLoader";
 
@@ -22,6 +22,7 @@ const ItemDetailContainer = () => {
       });
   }, [id]);
   const renderizarCod = () => {
+    traerCategorias();
     if (product.name === undefined) {
       return (
         <div className="itemListContainer__error">

@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CartWidget from "./cartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import { assetsUrl } from "../../context/ImgContext";
+import { traerCategorias } from "../../services/firestore";
 
 const NavBar = () => {
+  const [categorias, setCategorias] = useState();
+  const [renderizar, setRenderizar] = useState(false);
+  /* const renderizarCat = () => {
+    return categorias.map((cat) => <li>{cat}</li>);;
+  }; */
+  useEffect(() => {
+    traerCategorias()
+      .then((res) => {
+        setCategorias(res);
+      })
+      .then(() => {
+        setRenderizar(true);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }, [categorias]);
   return (
     <nav className="navBar text-white">
       <ul className="navBar__list text-xl">
@@ -22,6 +40,7 @@ const NavBar = () => {
             Productos
           </Link>
         </li>
+        {/* {renderizar === true ? renderizarCat() : null} */}
         <li>
           <Link to="/categoria/Termos" className="navBar__list--category">
             Termos
