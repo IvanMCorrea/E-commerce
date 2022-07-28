@@ -3,25 +3,32 @@ import CartWidget from "./cartWidget/CartWidget";
 import { Link } from "react-router-dom";
 import { assetsUrl } from "../../context/ImgContext";
 import { traerCategorias } from "../../services/firestore";
+import Categories from "./categories/Categories";
 
 const NavBar = () => {
-  const [categorias, setCategorias] = useState();
+  const [categorias, setCategorias] = useState([]);
   const [renderizar, setRenderizar] = useState(false);
-  /* const renderizarCat = () => {
-    return categorias.map((cat) => <li>{cat}</li>);;
-  }; */
+  const renderizarCat = () => {
+    return (
+      <>
+        {categorias.map((cat, index) => {
+          return <Categories category={cat} key={index} />;
+        })}
+      </>
+    );
+  };
   useEffect(() => {
     traerCategorias()
       .then((res) => {
         setCategorias(res);
       })
-      .then(() => {
+      .then((res) => {
         setRenderizar(true);
       })
       .catch((error) => {
         console.log(error);
       });
-  }, [categorias]);
+  }, []);
   return (
     <nav className="navBar text-white">
       <ul className="navBar__list text-xl">
@@ -40,22 +47,7 @@ const NavBar = () => {
             Productos
           </Link>
         </li>
-        {/* {renderizar === true ? renderizarCat() : null} */}
-        <li>
-          <Link to="/categoria/Termos" className="navBar__list--category">
-            Termos
-          </Link>
-        </li>
-        <li>
-          <Link to="/categoria/Mates" className="navBar__list--category">
-            Mates
-          </Link>
-        </li>
-        <li>
-          <Link to="/categoria/Bombillas" className="navBar__list--category">
-            Bombillas
-          </Link>
-        </li>
+        {renderizar === true ? renderizarCat() : null}
         <li>
           <Link to="/contacto" className="navBar__list--category">
             Contacto

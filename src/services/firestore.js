@@ -44,7 +44,8 @@ export async function traerCategorias() {
       category = prods.map((item) => {
         return (category = [item.category]);
       });
-      const cat = new Set(category.map((obj) => obj[0]));
+      const array = new Set(category.map((obj) => obj[0]));
+      const cat = [...array];
       return cat;
     });
   return categories;
