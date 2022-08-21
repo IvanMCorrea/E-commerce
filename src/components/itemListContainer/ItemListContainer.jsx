@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import ItemList from "../itemList/ItemList";
+import Carousel from "../carousel/Carousel";
 import { useParams, Link } from "react-router-dom";
 import {
   traerProductos,
@@ -40,6 +41,9 @@ const ItemListContainer = (props) => {
     if (productos.length > 0) {
       return (
         <div className="itemListContainer">
+          <div className="slider">
+            {categoriaId === undefined ? <Carousel /> : null}
+          </div>
           <h1 className="itemListContainer--title">
             {categoriaId === undefined ? props.greetings : categoriaId}
           </h1>
