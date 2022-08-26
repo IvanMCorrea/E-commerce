@@ -27,9 +27,17 @@ li {
 }
 //---------------------------- CAROUSEL ----------------------------
 .imgCarousel {
-  height: 250px;
-  width: 250px;
-  @media (min-width: 380px) {
+  height: 180px;
+  width: 180px;
+  @media (min-width: 350px) {
+    height: 250px;
+    width: 250px;
+  }
+  @media (min-width: 450px) {
+    height: 300px;
+    width: 300px;
+  }
+  @media (min-width: 600px) {
     height: 350px;
     width: 350px;
   }
