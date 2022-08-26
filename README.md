@@ -25,11 +25,10 @@ The tool used is the React javascript library, in order to achieve greater versa
 - [x] Deploy on Netlify
 - [ ] Deploy on GitHub Pages
 - [ ] Stock management
-- [ ] Multi-language Support
-  - [ ] English
-  - [ ] Spanish
 
 ## Deploy
+
+DEMO: [Netlify Deploy][deploy-url]
 
 #### 1. Clone the repo
 
@@ -73,3 +72,4 @@ npm start
 [github-url]: https://github.com/IvanMCorrea/
 [linkedin.com]: https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white
 [linkedin-url]: https://www.linkedin.com/in/ivanmcorrea/
+[deploy-url]: https://superlative-crisp-fce7b4.netlify.app/
