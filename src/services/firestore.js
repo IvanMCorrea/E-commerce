@@ -33,6 +33,17 @@ export async function traerProductos() {
   });
   return respuesta;
 }
+export async function traerCarousel() {
+  const carouselCollection = collection(appFirestore, "carousel");
+  const prodsSnapshot = await getDocs(carouselCollection);
+  let respuesta = prodsSnapshot.docs.map((doc) => {
+    return {
+      ...doc.data(),
+      id: doc.id,
+    };
+  });
+  return respuesta;
+}
 export async function traerCategorias() {
   let prods = [];
   let category = [];

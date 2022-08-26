@@ -23,7 +23,6 @@ const Cart = () => {
   };
   return (
     <div className="cart">
-      <h1 className="cart--title">Cart</h1>
       {cart.map((item) => (
         <div className="cart__Items" key={item.id}>
           <img

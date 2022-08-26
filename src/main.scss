@@ -25,6 +25,23 @@ li {
   background-color: #fbfbfd;
   min-height: 100vh;
 }
+//---------------------------- CAROUSEL ----------------------------
+.imgCarousel {
+  height: 350px;
+  width: 350px;
+}
+.carousel {
+  padding-bottom: 2rem;
+  position: relative;
+  z-index: 0;
+  cursor: pointer;
+}
+.slick-slide {
+  opacity: 70%;
+}
+.slick-current {
+  opacity: 100% !important;
+}
 //---------------------------- BUTTONS ----------------------------
 button {
   all: unset;
@@ -62,7 +79,7 @@ button:disabled {
   padding-top: 25%;
 }
 .slider {
-  width: 80%;
+  width: 85%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -79,6 +96,7 @@ button:disabled {
   position: fixed;
   width: 100%;
   top: 0;
+  z-index: 10000;
   -webkit-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.6);
   -moz-box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.6);
   box-shadow: 0px 5px 5px 1px rgba(0, 0, 0, 0.6);
