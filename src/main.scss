@@ -27,8 +27,12 @@ li {
 }
 //---------------------------- CAROUSEL ----------------------------
 .imgCarousel {
-  height: 350px;
-  width: 350px;
+  height: 250px;
+  width: 250px;
+  @media (min-width: 380px) {
+    height: 350px;
+    width: 350px;
+  }
 }
 .carousel {
   padding-bottom: 2rem;
